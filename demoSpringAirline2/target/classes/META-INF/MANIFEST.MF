@@ -1,0 +1,10 @@
+Manifest-Version: 1.0
+Built-By: abdulmunnaf
+Build-Jdk: 10.0.1
+Implementation-Title: demoSpringAirline
+Implementation-Version: 0.0.1-SNAPSHOT
+Implementation-Vendor-Id: com.demo.airline
+Implementation-URL: https://projects.spring.io/spring-boot/#/spring-bo
+ ot-starter-parent/demoSpringAirline
+Created-By: Maven Integration for Eclipse
+
