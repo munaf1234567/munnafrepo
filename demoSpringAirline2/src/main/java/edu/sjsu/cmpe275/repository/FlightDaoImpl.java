@@ -6,6 +6,8 @@ import java.util.List;
 import org.springframework.stereotype.Repository;
 
 import edu.sjsu.cmpe275.model.Flight;
+import edu.sjsu.cmpe275.model.Passenger;
+import edu.sjsu.cmpe275.model.Reservation;
 @Repository
 public class FlightDaoImpl implements FlightDao {
  List<Flight> list= new ArrayList<>();
@@ -63,6 +65,46 @@ public class FlightDaoImpl implements FlightDao {
 			
 		}
 		return null;
+	}
+
+
+
+
+	@Override
+	public String FlightReservationCancelletion(int flightno, String RVNO) {
+		int noofcancel=0;
+		Flight flight=null;
+		for(Flight f:list)
+		{
+			if(f.getFlightNumber()==flightno)
+			{
+				flight=f;
+				 List<Reservation> reslist=f.getReservations();
+				List<Passenger> passlist= f.getPassengers();
+				for(Reservation res:reslist)
+				{
+					if(res.getOrderNumber().equals(RVNO))
+						reslist.remove(res);
+				}
+				
+				for(Passenger pas:passlist)
+				{
+					if(pas.getReservations().getOrderNumber().equals(RVNO))
+					{
+						passlist.remove(pas);
+						noofcancel++;
+					}
+				}
+				int seatleft=f.getSeatsLeft()+noofcancel;
+				f.setSeatsLeft(seatleft);
+				return "Successfull Cancalled on Flight"+flight.getFlightname()+"("+flight.getFlightNumber()+")";
+		    }
+			System.out.println(f);
+			
+		}
+		
+		
+		return null ;
 	}
 
 }

@@ -12,5 +12,6 @@ import java.util.*;
 public interface FlightDao {
 	List<Flight> getAllFlights(String date, String from,String to);
 	Flight getFlight(int flightno);
+	public String FlightReservationCancelletion(int flightno, String RVNO);
 	
 }

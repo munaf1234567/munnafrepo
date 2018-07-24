@@ -9,6 +9,8 @@ import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 
 
 import javax.xml.bind.annotation.*;
+
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -142,6 +144,9 @@ public class Flight {
 		this.departureTime = departureTime;
 		this.arrivalTime = arrivalTime;
 		this.description = description;
+		this.seatsLeft = flightCapacity;
+		this.reservations=new ArrayList<>();
+		this.passengers=new ArrayList<>();
 	}
 	public Flight() {
 		super();

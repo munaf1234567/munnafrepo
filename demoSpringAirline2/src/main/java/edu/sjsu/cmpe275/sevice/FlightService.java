@@ -9,6 +9,7 @@ import edu.sjsu.cmpe275.model.Passenger;
 
 public interface FlightService {
 	List<Flight> getAllFlights(String date, String from,String to);
-	  List  FlightReservation(int flightno ,Passenger... passenget);
+	  String  FlightReservation(int flightno ,Passenger... passenget);;
+	 String FlightReservationCancelletion(int flightno,String RVNO);
 
 }

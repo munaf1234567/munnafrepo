@@ -18,8 +18,8 @@ public class Passenger {
     private String gender;
     // The uniqueness of phone numbers must be enforced. 
     private String phone;
-
-    private List<Reservation> reservations;
+    private Reservation reservations;
+  //  private List<Reservation> reservations;
 
     public Passenger() {
     }
@@ -146,7 +146,7 @@ public class Passenger {
      *
      * @return the reservations
      */
-    public List<Reservation> getReservations() {
+    public Reservation getReservations() {
         return reservations;
     }
 
@@ -155,7 +155,7 @@ public class Passenger {
      *
      * @param reservations the reservations
      */
-    public void setReservations(List<Reservation> reservations) {
+    public void setReservations(Reservation reservations) {
         this.reservations = reservations;
     }
 
